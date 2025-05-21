@@ -1,0 +1,17 @@
+{
+  "name": "doodledash",
+  "version": "1.0.0",
+  "description": "A Skribbl.io clone built with Socket.IO and Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["drawing", "multiplayer", "skribbl", "game"],
+  "author": "varun",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  }
+}
