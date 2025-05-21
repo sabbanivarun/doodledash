@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DoodleDash</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LOBBY SECTION -->
+  <div id="lobby" class="center-screen">
+    <h1>🎮 Welcome to DoodleDash</h1>
+    <input type="text" id="nickname-input" placeholder="Enter your nickname" />
+    <input type="text" id="room-input" placeholder="Enter room name" />
+    <button id="join-btn">Join Game</button>
+  </div>
+
+  <!-- GAME CONTAINER -->
+  <div id="game-container" style="display: none; flex-direction: column; height: 100vh;">
+    <!-- HEADER -->
+    <div id="game-header">
+      <div id="round-timer">Time Left: 60s</div>
+      <div id="current-word"></div>
+    </div>
+
+    <!-- MAIN GAME AREA -->
+    <div id="main-content" style="display: flex; flex: 1; overflow: hidden;">
+      <!-- DRAWING AREA -->
+      <canvas id="drawing-board" width="800" height="500"></canvas>
+
+      <!-- CHAT & LEADERBOARD -->
+      <div id="sidebar" style="flex: 1; display: flex; flex-direction: column; background: #fff; border-left: 2px solid #ccc; padding: 10px; overflow-y: auto;">
+        <!-- CHAT -->
+        <div id="chat-section" style="flex: 1; display: flex; flex-direction: column; margin-bottom: 15px;">
+          <div id="messages" class="scroll-box" style="flex: 1; background-color: #f0f0f0; border: 1px solid #ccc; padding: 8px; margin-bottom: 8px; overflow-y: auto; max-height: 300px;"></div>
+          <form id="chat-form" style="display: flex;">
+            <input id="chat-input" autocomplete="off" placeholder="Type a guess..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none;" />
+          </form>
+        </div>
+
+        <!-- LEADERBOARD -->
+        <div id="leaderboard" style="background-color: #e9f5ff; border: 1px solid #b3daff; padding: 10px; border-radius: 6px;">
+          <h3>🏆 Leaderboard</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
